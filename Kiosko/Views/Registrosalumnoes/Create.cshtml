@@ -1,4 +1,4 @@
-﻿@model Kiosko.Models.Registrosalumno
+@model Kiosko.Models.Registrosalumno
 
 @{
     ViewData["Title"] = "Create";
@@ -21,17 +21,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <center><label asp-for="Nombre" class="control-label" >Nombre del nuevo alumno</label></center>
-                <input asp-for="Nombre" class="form-control" required type="text" placeholder="agrega tu nombre" maxlength="20"/>
+                <input asp-for="Nombre" class="form-control" required type="text" placeholder="Nombre" maxlength="20" minlength="4" pattern="[A-Za-z ]+"/>
                 <span asp-validation-for="Nombre" class="text-danger" ></span>
             </div>
             <div class="form-group">
                 <center><label asp-for="Apellidop" class="control-label">Apellido Paterno</label></center>
-                <center><input asp-for="Apellidop" class="form-control" required placeholder="agrega tu primer apellido" maxlength="20"/></center>
+                <center><input asp-for="Apellidop" class="form-control" required placeholder="Apellido paterno" maxlength="20" minlength="2" pattern="[A-Za-z ]+"/></center>
                 <span asp-validation-for="Apellidop" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <center><label asp-for="Apellidom" class="control-label">Apellido Materno</label></center>
-                <input asp-for="Apellidom" class="form-control"  required placeholder="agrega tu segundo apellido" maxlength="20"/>
+                <input asp-for="Apellidom" class="form-control"  required placeholder="Apellido materno" maxlength="20" minlength="2" pattern="[A-Za-z ]+"/>
                 <span asp-validation-for="Apellidom" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -48,12 +48,12 @@
             </div>
             <div class="form-group">
                 <center><label asp-for="Telefono" class="control-label"></label></center>
-                <input asp-for="Telefono" class="form-control" required maxlength="10" />
+                <input asp-for="Telefono" class="form-control" required maxlength="10" minlength="10" pattern="[0-9]+"/>
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <center><label asp-for="Direccion" class="control-label"></label></center>
-                <input asp-for="Direccion" class="form-control" required />
+                <input asp-for="Direccion" class="form-control" required maxlength="50" minlength="10"/>
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -67,17 +67,17 @@
             </div>
             <div class="form-group">
                 <center> <label asp-for="Fotoalumno" class="control-label">Foto del Alumno</label></center>
-                <input type="file" name="archivo" asp-for="Fotoalumno" class="form-control" />
+                <input type="file" name="archivo" asp-for="Fotoalumno" class="form-control" required accept="image/*" maxlength="300"/>
                 <span asp-validation-for="Fotoalumno" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <center><label asp-for="Correo" class="control-label"></label></center>
-                <input asp-for="Correo" class="form-control" type="email" required maxlength="28" />
+                <input asp-for="Correo" class="form-control" type="email" required maxlength="28" minlength="6"/>
                 <span asp-validation-for="Correo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <center><label asp-for="Contraseña" class="control-label"></label></center>
-                <input asp-for="Contraseña" class="form-control" required maxlength="20" />
+                <input asp-for="Contraseña" class="form-control" required maxlength="20" type="password" minlength="10"/>
                 <span asp-validation-for="Contraseña" class="text-danger"></span>
             </div>
             <div class="form-group">
